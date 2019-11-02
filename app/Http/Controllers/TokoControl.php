@@ -70,6 +70,7 @@ class TokoControl extends Controller
       }
       $ins = PermintaanDetail::create($req->all());
       if ($ins) {
+      
         return back()->with("msg","Sukses Simpan Data");
       }else {
         return back()->withErrors(["msg"=>"Gagal Simpan Data"]);

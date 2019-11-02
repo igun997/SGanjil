@@ -246,17 +246,14 @@ class GudangControl extends Controller
     }
     public function permintaan_update_action(Request $req,$id,$status)
     {
-      if ($status == "ditolak") {
-        Permintaan::where(["kode_permintaan"=>$id])->update(["ket"=>$req->input("ket")]);
+      $cek = Permintaan::where(["kode_permintaan"=>$id])->update(["verifikasi"=>$status]);
+      if ($cek) {
         $x = PermintaanDetail::where(["kode_permintaan"=>$id])->get();
         foreach ($x as $key => $value) {
           $ck = Barang::where(["kode_barang"=>$value->kode_barang]);
           $stok = $ck->first()->stok_awal;
-          $ck->update(["stok_awal"=>($stok+$value->jumlah)]);
+          $ck->update(["stok_awal"=>($stok-$value->jumlah)]);
         }
-      }
-      $cek = Permintaan::where(["kode_permintaan"=>$id])->update(["verifikasi"=>$status]);
-      if ($cek) {
         return back()->with("msg","Data Sukses Di Update");
       }else {
         return back()->withErrors(["msg"=>"Data Gagal Di Update"]);
