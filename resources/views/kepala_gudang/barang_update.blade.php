@@ -1,4 +1,4 @@
-@extends("app.admin_gudang")
+@extends("app.kepala_gudang")
 @section("title",$title)
 @section("content")
 <div class="col-lg-6 offset-lg-3">
