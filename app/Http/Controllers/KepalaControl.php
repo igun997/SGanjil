@@ -29,6 +29,16 @@ class KepalaControl extends Controller
       $data["barang"] = Barang::all();
       return view("kepala_gudang.barang_index")->with($data);
     }
+    public function cek($id)
+    {
+      $d = HistoryHarga::where(["kode_barang"=>$id])->get();
+      $data = [];
+      $data["data"] = [];
+      foreach ($d as $key => $value) {
+        $data["data"][] = [($key+1),date("d-m-Y",strtotime($value->tgl_buat)),number_format($value->harga)];
+      }
+      return response()->json($data);
+    }
     public function barang_add_action(Request $req)
     {
       $this->validate($req,[

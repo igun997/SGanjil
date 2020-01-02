@@ -92,7 +92,7 @@
                   <td>{{$value->harga}}</td>
                   <td>
                     @if($value->bukti != null)
-                    <a href="{{url("upload/".$value->bukti)}}" class="btn btn-success">Download Bukti</a>
+                    <a href="{{url("upload/".$value->bukti)}}" target="_blank" class="btn btn-success">Download Bukti</a>
                     @endif
                   </td>
                 </tr>
@@ -121,7 +121,7 @@
         $("#perbaruan").after('<button class="btn btn-sm btn-danger ml-2 mt-2" id="batalkan" type="button">Batalkan Pembaruan</button>');
         s = $("#opsi").find(":selected").data("harga");
         console.log(s);
-        $("#kontennya").html('<div class="form-group"><label>Harga Baru</label><input required  type="number" class="form-control" name="harga"></div><div class="form-group"><label>Bukti Perubahan Harga</label><input type="file" class="form-control-file" name="bukti"></div>');
+        $("#kontennya").html('<div class="form-group"><label>Harga Baru</label><input required  type="number" class="form-control" name="harga"></div><div class="form-group"><label>Bukti Perubahan Harga</label><input type="file"  class="form-control-file" name="bukti" accept=".pdf,.jpg,.jpeg"></div>');
       }
     });
     $("#btnGroup").on('click', '#batalkan', function(event) {

@@ -18,7 +18,7 @@ Route::get('/logout', function () {
     session()->flush();
     return redirect("login");
 });
-
+Route::get('/cek/harga/{id?}',"KepalaControl@cek")->name("cek.harga");
 Route::get('/login',"LoginControl@index");
 Route::post('/login',"LoginControl@login")->name("login");
 Route::group(['middleware' => ['toko']], function () {

@@ -93,7 +93,12 @@
             <td>{{$value->nama_barang}}</td>
             <td>{{$value->warna_content->warna}}</td>
             <td>{{$value->kategori_content->kategori}}</td>
-            <td>{{$value->harga_satuan}}</td>
+            <td>
+              {{number_format($value->harga_satuan)}}
+              <button type="button "  data-id="{{$value->kode_barang}}" class="btn btn-primary riwayat mt-2">
+                Riwayat Harga
+              </button>
+            </td>
             <td>{{$value->stok_awal}}</td>
             <td>{{$value->stok_minimum}}</td>
             <td>
@@ -114,4 +119,43 @@
 
 </div>
 
+@endsection
+@section("js")
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js" integrity="sha256-sfG8c9ILUB8EXQ5muswfjZsKICbRIJUG/kBogvvV5sY=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  console.log("S");
+  $(".dt").find(".riwayat").on('click', function(event) {
+    event.preventDefault();
+    id = $(this).data("id");
+    console.log(id);
+    var dialog = bootbox.dialog({
+        title: 'History Harga',
+        message: '<p align=center><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
+    });
+
+    dialog.init(function(){
+      var form = [
+        "<div class=row>",
+        "<div class=col-md-12>",
+        "<div class=table-responsive>",
+        "<table class='table table-stripped' id='dt2'>",
+        "<thead>",
+        "<th>No</th>",
+        "<th>Tanggal</th>",
+        "<th>Harga</th>",
+        "</thead>",
+        "<tbody>",
+        "</tbody>",
+        "</table>",
+        "</div>",
+        "</div>",
+        "</div>"
+      ];
+      dialog.find('.bootbox-body').html(form.join(""));
+      dialog.find("#dt2").DataTable({
+        ajax:"{{route("cek.harga")}}/"+id
+      });
+    });
+  });
+</script>
 @endsection
