@@ -330,7 +330,7 @@ class GudangControl extends Controller
       $pesan = $cek2->first()->po->total_pesan;
       if ($cek->count() > 0) {
         $no_retur = $cek->first()->no_retur;
-        $total_retur = $cek->retur_details->sum("total_retur");
+        $total_retur = $cek->first()->retur_details->sum("total_retur");
         $total_terima = $terima;
         if ((($total_retur+$req->total_retur) > $pesan) && ($total_terima+$total_retur) > $pesan) {
           return  back()->withErrors(["msg"=>"Total Terima Melebihi Total Pesan"]);
