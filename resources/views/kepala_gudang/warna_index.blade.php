@@ -21,7 +21,7 @@
         <form action="{{route("kepala.warna.add_action")}}" method="post">
           @csrf
           <div class="form-group">
-            <label>Nama Warna</label>
+            <label>Nama Part</label>
             <input type="text" class="form-control" name="warna" placeholder="">
           </div>
           <div class="form-group">

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Nlai Siswa</title>
+    <title>Rekap Laporan Barang</title>
     <style media="screen">
         body {
             font-family: "Open Sans", sans-serif;
@@ -94,7 +94,13 @@
 </head>
 
 <body>
-  <h3 align="center">GARAGE KUSTOM</h3>
+  <h4 align="center">
+    <img src="{{public_path("assets\dist\img\AdminLTELogo.png")}}" style="width:auto;height:80px"   alt="">
+    <p align="center">
+      Jl. Terusan Gatot Subroto No.517, Sukapura, Kiaracondong, Kota Bandung, Jawa Barat.
+    </p>
+  </h4>
+  <hr>
   <h3 align="center">LAPORAN PERMINTAAN BARANG</h3>
   <h4 align="center">Per {{date("d-m-Y",strtotime($mulai))}} - {{date("d-m-Y",strtotime($sampai))}}</h4>
     <table>
@@ -103,7 +109,7 @@
               <th scope="col">No</th>
               <th scope="col">Tanggal</th>
               <th scope="col">Nama Barang</th>
-              <th scope="col">Warna</th>
+              <th scope="col">Part</th>
               <th scope="col">Kategori</th>
               <th scope="col">Harga Satuan</th>
               <th scope="col">Jumlah</th>
@@ -127,7 +133,7 @@
     <br>
     <br>
     <p>Bandung , {{date("d-m-Y")}}</p>
-    <p>Kepala Gudang</p>
+    <p>Rendal Material</p>
     <br>
     <br>
     <br>

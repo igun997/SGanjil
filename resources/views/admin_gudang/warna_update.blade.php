@@ -22,7 +22,7 @@
           @csrf
 
           <div class="form-group">
-            <label>Nama Warna</label>
+            <label>Nama Part</label>
             <input type="text" class="form-control" name="warna" value="{{$data->warna}}">
           </div>
           <div class="form-group">

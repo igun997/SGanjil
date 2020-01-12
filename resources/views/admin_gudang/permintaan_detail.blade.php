@@ -31,16 +31,16 @@
             <label>Tanggal Pengajuan</label>
             <input type="text" class="form-control" value="{{ucfirst($permintaan->permintan->tgl)}}" disabled>
           </div>
-          
+
           @if($permintaan->permintan->verifikasi == "menunggu")
           <form action="{{route("permintaan.update_action",[$permintaan->kode_permintaan,"ditolak"])}}" method="get">
           <div class="form-group">
             <a href="{{route("permintaan.update_action",[$permintaan->kode_permintaan,"disetujui"])}}" class="btn btn-success">
               <i class="fa fa-check"> Setujui</i>
             </a>
-          </div>  
+          </div>
           </form>
-          
+
           @endif
         </div>
         <div class="col-md-12">
@@ -50,7 +50,7 @@
                 <th>No</th>
                 <th>Kode Barang</th>
                 <th>Nama Barang</th>
-                <th>Warna</th>
+                <th>Part</th>
                 <th>Kategori</th>
                 <th>Harga Satuan</th>
                 <th>Jumlah</th>

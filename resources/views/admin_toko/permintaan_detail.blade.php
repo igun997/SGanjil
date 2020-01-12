@@ -39,7 +39,7 @@
                 <th>No</th>
                 <th>Kode Barang</th>
                 <th>Nama Barang</th>
-                <th>Warna</th>
+                <th>Part</th>
                 <th>Kategori</th>
                 <th>Harga Satuan</th>
                 <th>Jumlah</th>

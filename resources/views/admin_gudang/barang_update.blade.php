@@ -29,7 +29,7 @@
             <input type="text" class="form-control" name="nama_barang" value="{{$data->nama_barang}}">
           </div>
           <div class="form-group">
-            <label>Warna Barang</label>
+            <label>Part</label>
             <select class="form-control" name="warna">
               @foreach(App\Model\Warna::all() as $k => $v)
               @if($v->id_warna == $data->warna)

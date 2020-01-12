@@ -93,19 +93,19 @@
                   [{{$v->barang->kode_barang}}] {{$v->barang->nama_barang}} ({{$v->barang->harga_satuan}} --> {{$v->harga}})  -
                   <a href="{{route("keuangan.validasi.perubahan",[$v->barang->kode_barang,"1"])}}?harga={{$v->harga}}&bukti={{$v->bukti}}&po={{$po->no_po}}" class="btn btn-sm btn-success ml-2">Setujui</a>
                   <a href="{{route("keuangan.validasi.perubahan",[$v->barang->kode_barang,"2"])}}?harga={{$v->harga}}&bukti={{$v->bukti}}&po={{$po->no_po}}" class="btn btn-sm btn-danger ml-2">Tolak</a>
-                  <a href="{{url("upload/".$v->bukti)}}" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
+                  <a href="{{url("upload/".$v->bukti)}}" target="_blank" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
                 </li>
               @elseif($v->bukti != null && $v->persetujuan_harga == 1)
               <li>
                 [{{$v->barang->kode_barang}}] {{$v->barang->nama_barang}} ({{\App\Model\HistoryHarga::where(["bukti"=>$v->bukti])->first()->harga}} --> {{$v->harga}})  -
                 <span class="badge badge-success ml-2">Disetujui</span>
-                <a href="{{url("upload/".$v->bukti)}}" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
+                <a href="{{url("upload/".$v->bukti)}}" target="_blank" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
               </li>
               @elseif($v->bukti != null && $v->persetujuan_harga == 2)
               <li>
                 [{{$v->barang->kode_barang}}] {{$v->barang->nama_barang}} ({{$v->barang->harga_satuan}} --> {{$v->harga}})  -
                 <span class="badge badge-danger ml-2">Ditolak</span>
-                <a href="{{url("upload/".$v->bukti)}}" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
+                <a href="{{url("upload/".$v->bukti)}}" target="_blank" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
               </li>
               @endif
             @endforeach
