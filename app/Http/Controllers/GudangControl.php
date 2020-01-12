@@ -325,8 +325,16 @@ class GudangControl extends Controller
         "total_retur"=>"required|numeric|min:1",
       ]);
       $cek = Retur::where(["no_po"=>$id]);
+      $cek2 = PoDetail::where(["no_po"=>$id,"id_po_detail"=>$req->id_po_detail]);
+      $terima = $cek2->sum("total_terima");
+      $pesan = $cek2->first()->total_pesan;
       if ($cek->count() > 0) {
         $no_retur = $cek->first()->no_retur;
+        $total_retur = $cek->retur_details->sum("total_retur");
+        $total_terima = $terima;
+        if ((($total_retur+$req->total_retur) > $pesan) && ($total_terima+$total_retur) > $pesan) {
+          return  back()->withErrors(["msg"=>"Total Terima Melebihi Total Pesan"]);
+        }
         $create = ReturDetail::create(["no_retur"=>$no_retur,"kode_barang"=>$req->kode_barang,"total_retur"=>$req->total_retur]);
         if ($create) {
           return back()->with(['msg'=>"Sukses Tambah Barang Retur"]);

@@ -61,19 +61,19 @@
               <li>
                 [{{$v->barang->kode_barang}}] {{$v->barang->nama_barang}} ({{$v->barang->harga_satuan}} --> {{$v->harga}})  -
                 <span class="badge badge-primary ml-2">Menunggu Verifikasi Keuangan</span>
-                <a href="{{url("upload/".$v->bukti)}}" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
+                <a href="{{url("upload/".$v->bukti)}}" target="_blank" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
               </li>
               @elseif($v->bukti != null && $v->persetujuan_harga == 1)
               <li>
                 [{{$v->barang->kode_barang}}] {{$v->barang->nama_barang}} ({{\App\Model\HistoryHarga::where(["bukti"=>$v->bukti])->first()->harga}} --> {{$v->harga}})  -
                 <span class="badge badge-success ml-2">Disetujui</span>
-                <a href="{{url("upload/".$v->bukti)}}" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
+                <a href="{{url("upload/".$v->bukti)}}" target="_blank" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
               </li>
               @elseif($v->bukti != null && $v->persetujuan_harga == 2)
               <li>
                 [{{$v->barang->kode_barang}}] {{$v->barang->nama_barang}} ({{$v->barang->harga_satuan}} --> {{$v->harga}})  -
                 <span class="badge badge-danger ml-2">Ditolak</span>
-                <a href="{{url("upload/".$v->bukti)}}" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
+                <a href="{{url("upload/".$v->bukti)}}" target="_blank" class="btn btn-sm btn-primary ml-2">Download Bukti</a>
               </li>
               @endif
             @endforeach
