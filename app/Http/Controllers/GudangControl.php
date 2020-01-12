@@ -327,7 +327,7 @@ class GudangControl extends Controller
       $cek = Retur::where(["no_po"=>$id]);
       $cek2 = PoDetail::where(["no_po"=>$id]);
       $terima = $cek2->sum("total_terima");
-      $pesan = $cek2->po->total_pesan;
+      $pesan = $cek2->first()->po->total_pesan;
       if ($cek->count() > 0) {
         $no_retur = $cek->first()->no_retur;
         $total_retur = $cek->retur_details->sum("total_retur");
