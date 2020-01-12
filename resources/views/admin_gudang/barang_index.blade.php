@@ -4,7 +4,7 @@
 <div class="col-lg-4">
   <div class="card">
     <div class="card-header">
-      <h5 class="m-0">Tambah Barang</h5>
+      <h5 class="m-0">Tambah Komponen</h5>
     </div>
     <div class="card-body">
       <div class="col-md-12">
@@ -25,7 +25,7 @@
             <input type="text" class="form-control" name="kode_barang" placeholder="">
           </div>
           <div class="form-group">
-            <label>Nama Barang</label>
+            <label>Nama Komponen</label>
             <input type="text" class="form-control" name="nama_barang" placeholder="">
           </div>
           <div class="form-group">
@@ -76,9 +76,9 @@
         <table class="table dt">
         <thead>
           <th>No</th>
-          <th>Kode Barang</th>
-          <th>Nama Barang</th>
-          <th>Warna</th>
+          <th>Kode Komponen</th>
+          <th>Nama Komponen</th>
+          <th>Part</th>
           <th>Kategori</th>
           <th>Harga Satuan</th>
           <th>Stok Awal</th>

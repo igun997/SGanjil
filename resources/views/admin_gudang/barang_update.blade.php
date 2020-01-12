@@ -25,7 +25,7 @@
             <input type="text" class="form-control" disabled value="{{$data->kode_barang}}">
           </div>
           <div class="form-group">
-            <label>Nama Barang</label>
+            <label>Nama Komponen</label>
             <input type="text" class="form-control" name="nama_barang" value="{{$data->nama_barang}}">
           </div>
           <div class="form-group">

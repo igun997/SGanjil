@@ -4,7 +4,7 @@
 <div class="col-lg-4">
   <div class="card">
     <div class="card-header">
-      <h5 class="m-0">Tambah Suplier</h5>
+      <h5 class="m-0">Tambah Part</h5>
     </div>
     <div class="card-body">
       <div class="col-md-12">
@@ -37,13 +37,13 @@
 <div class="col-lg-8">
   <div class="card">
     <div class="card-header">
-      <h5 class="m-0">{{$title}}</h5>
+      <h5 class="m-0">Data Part</h5>
     </div>
     <div class="card-body">
       <table class="table dt">
         <thead>
           <th>No</th>
-          <th>Nama Warna</th>
+          <th>Nama Part</th>
           <th>Aksi</th>
         </thead>
         <tbody>

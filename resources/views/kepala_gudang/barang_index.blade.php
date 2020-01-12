@@ -25,11 +25,11 @@
             <input type="text" class="form-control" name="kode_barang" placeholder="">
           </div>
           <div class="form-group">
-            <label>Nama Barang</label>
+            <label>Nama Komponen</label>
             <input type="text" class="form-control" name="nama_barang" placeholder="">
           </div>
           <div class="form-group">
-            <label>Warna Barang</label>
+            <label>Part</label>
             <select class="form-control" name="warna">
               @foreach(App\Model\Warna::all() as $k => $v)
               <option value="{{$v->id_warna}}">{{$v->warna}}</option>
@@ -77,8 +77,8 @@
         <thead>
           <th>No</th>
           <th>Kode Barang</th>
-          <th>Nama Barang</th>
-          <th>Warna</th>
+          <th>Nama Komponen</th>
+          <th>Part</th>
           <th>Kategori</th>
           <th>Harga Satuan</th>
           <th>Stok Awal</th>

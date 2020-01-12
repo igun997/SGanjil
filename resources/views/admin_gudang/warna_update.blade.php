@@ -4,7 +4,7 @@
 <div class="col-lg-6 offset-lg-3">
   <div class="card">
     <div class="card-header">
-      <h5 class="m-0">Update Warna</h5>
+      <h5 class="m-0">Update Part</h5>
     </div>
     <div class="card-body">
       <div class="col-md-12">
