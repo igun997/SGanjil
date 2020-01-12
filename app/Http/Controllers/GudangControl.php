@@ -333,7 +333,7 @@ class GudangControl extends Controller
         $total_retur = $cek->first()->retur_details->sum("total_retur");
         $total_terima = $terima;
         if ((($total_retur+$req->total_retur) > $pesan) && ($total_terima+$total_retur) > $pesan) {
-          return  back()->withErrors(["msg"=>"Total Terima Melebihi Total Pesan"]);
+          return  back()->withErrors(["msg"=>"Total Retur Melebihi Total Pesan"]);
         }
         $create = ReturDetail::create(["no_retur"=>$no_retur,"kode_barang"=>$req->kode_barang,"total_retur"=>$req->total_retur]);
         if ($create) {
